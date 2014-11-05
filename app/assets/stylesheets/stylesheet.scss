@@ -1,0 +1,125 @@
+/*WELCOME PAGE*/
+.welcome-bg{
+  background-image: url("https://s3.amazonaws.com/movie-site-anton/background.jpg");
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.intro-container {
+  padding-top: 3%;
+}
+
+.intro{
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2em;
+  width: 50%;
+  margin: 0 auto;
+  color: white;
+  border-radius: 10px;
+}
+
+.intro h3{
+  color: white;
+  text-align: center;
+  font-family: 'Signika', sans-serif;
+}
+
+.intro h2{
+  color: white;
+  text-align: center;
+  font-family: 'Signika', sans-serif;
+}
+
+.intro h5{
+  color: #BEBEBE;
+  text-align: center;
+  font-family: 'Signika', sans-serif;
+}
+
+.sign-up-button{
+  text-align: center;
+  border-radius: 10px;
+}
+
+.second_welcome{
+  width: 100%;
+  height: 25%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: -3%;
+  z-index: 2;
+}
+
+.third_welcome{
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 1);
+  margin-top: -1%;
+  z-index: 2;
+  text-align: center;
+}
+
+.screen{
+  z-index: 7;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  margin-top: -23%;
+  border: none;
+}
+
+/*Welcome three circle*/
+.itworked {
+  font: italic bold 2em "bistro-script-web-1","bistro-script-web-2", cursive;
+  color: #2A4F54;
+  }
+
+.line-left, .line-right {border-bottom: 2px solid #2a4f54;width: 22%;display: inline-block;margin-bottom: -50px;}
+.line-left {float: left;margin-top: 25px;margin-left: 15px;}
+.line-right {float: right;margin-top: 25px;margin-right: 15px;}
+
+.forth_welcome{
+  background-image: url("https://s3.amazonaws.com/movie-site-anton/2.jpg");
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+
+/*welcome end*/
+
+/*TOP BAR*/
+.top-divider{
+  height: 0.8%;
+  background: -webkit-linear-gradient(left, #0165B1, #0165B1 10%, #00A7DB 10%, #9AC430 15%, #9AC430 10%, #A62698);
+  margin-top: 56px;
+}
+
+.nav-items{
+  color: #666C73;
+  font-size: 0.8em;
+  margin: 4.5% auto;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.green{
+  background: #68AA10;
+}
+
+.blue{
+  background: #207BF0;
+}
+
+
