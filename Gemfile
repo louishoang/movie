@@ -37,6 +37,7 @@ gem 'devise'
 gem 'kaminari'
 gem 'httparty'
 gem 'font-awesome-rails'
+gem 'owlcarousel-rails'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
