@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <div class="fixed">
+    <div class="fixed" style="z-index: 99999">
       <nav class="top-bar" data-topbar role="navigation">
         <ul class="title-area">
           <li class="name">
@@ -21,18 +21,33 @@
            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
           <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
         </ul>
-
         <section class="top-bar-section">
           <!-- Right Nav Section -->
           <ul class="right">
-            <li class="nav-items">Home</li>
-            <li class="nav-items">Features</li>
-            <li class="nav-items">Price</li>
-            <li class="nav-items">How it works</li>
-            <li class="nav-items">||</li>
-            <li class="nav-items">Sign Up</li>
-            <li class="nav-items">Sign In</li>
-            <li class="nav-items">||</li>
+            <li class="nav-items">
+               <%= link_to "Home", root_path %>
+            </li>
+            <li class="nav-items">
+              <%= link_to "Browse Movies", root_path %>
+            </li>
+            <li class="nav-items">
+              <%= link_to "Price", root_path %>
+            </li>
+            <li class="nav-items">
+              <%= link_to "How it works", root_path %>
+            </li>
+            <% if user_signed_in? %>
+              <li class="nav-items">
+                <%= link_to "|| Sign Out ||", destroy_user_session_path, :method => :delete %>
+              </li>
+            <% else %>
+              <li class="nav-items">
+                  <%= link_to "|| Sign Up", new_user_registration_path %>
+                </li>
+                <li class="nav-items">
+                  <%= link_to "Sign In ||", new_user_session_path %>
+                </li>
+            <% end %>
           </ul>
 
           <!-- Left Nav Section -->
@@ -43,8 +58,23 @@
       </nav>
     </div>
     <div class="top-divider fixed"></div>
-
+    <% if notice %>
+      <div class="notice-flash">
+        <p><%= notice %></p>
+        <p><%= alert %></p>
+      </div>
+    <% end %>
     <%= yield %>
+    <div class="six_welcome small-12 columns footer">
+      <div class="small-5 small-offset-1 columns end">
+         Term of Use &nbsp;&nbsp;&nbsp;
+          Privacy Policy&nbsp;&nbsp;&nbsp;
+         Support
+      </div>
+      <div class="small-5 columns end" style="text-align: right">
+        Copyright @ 2014 MyVideoSite.com
+      </div>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
