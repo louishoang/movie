@@ -33,6 +33,27 @@
       </div>
       <hr>
     </div>
+    <div class="row">
+      <div class="slideshow">
+        <% @ten_newest.each do |movie| %>
+          <div class="item bw pic">
+            <%= link_to show_path(movie) do %>
+              <%= image_tag (movie.poster), :class => "top-ten-poster" %>
+            <% end %>
+            <div class="small-11 columns top-ten-title"><%= movie.name %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-6 columns">
+        <strong><span class="popular">Newest on SlickHD</span></strong>
+      </div>
+      <div class="small-6 columns" style="text-align: right;">
+        <strong><span class="view-all">VIEW ALL >></span></strong>
+      </div>
+      <hr>
+    </div>
     <div class="row" data-equalizer>
       <% @shows.each do |show| %>
         <div class="large-2 small-6 left columns" data-equalizer-watch>

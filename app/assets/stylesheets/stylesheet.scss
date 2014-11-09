@@ -220,6 +220,54 @@ margin-bottom: 3%;
 }
 
 //Shows index page
+.slideshow{
+  text-align: center;
+}
+
+.slideshow .item{
+  margin: -15%;
+}
+
+.slideshow .item :hover {
+  -moz-box-shadow: 0 0 10px black;
+  -webkit-box-shadow: 0 0 10px black;
+  box-shadow: 0 0 10px black;
+}
+
+.top-ten-poster{
+  width: 75%;
+  height: 75%;
+}
+
+.top-ten-title{
+  z-index: 5;
+  color: white;
+  font-weight: bold;
+  font-size: 0.75em;
+  position: absolute;
+  margin-top: -30%;
+  margin-left: 20%;
+  padding: 15px 25px 15px 20px;
+  background-color: rgba(0, 0, 0, 0.8)
+}
+
+/*B&W*/
+.bw {
+  opacity: 0.9;
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+
+}
+
+.bw:hover {
+  -webkit-filter: grayscale(80%);
+  opacity: 1;
+}
+// B&W end
+
 .popular{
   color: #888888;
   font-size: 1.25em;
