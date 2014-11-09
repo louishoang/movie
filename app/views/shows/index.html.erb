@@ -1,0 +1,37 @@
+<div class="small-12 columns">
+  <div class="small-3 columns padding-top">
+    <p>
+      <h5 class="search-left">BROWSE:</h5>
+      <ul class="search-list">
+        <li>Popular</li>
+        <li>Recommended For You</li>
+        <li>Genres</li>
+      </ul>
+    </p>
+    <p>
+      <h5 class="search-left">SETTINGS:</h5>
+      <ul class="search-list">
+        <li>My Account</li>
+        <li>Payment</li>
+        <li>Customer Support</li>
+      </ul>
+    </p>
+  </div>
+  <div class="small-9 columns right-panel padding-top">
+    <div class="row" data-equalizer>
+      <% @shows.each do |show| %>
+        <div class="large-2 small-6 left columns" data-equalizer-watch>
+          <div class="large-12 small-12 columns">
+            <%= link_to image_tag(show.poster, alt: "Poster", class: "poster"),show_path(show) %>
+          </div>
+          <div class="large-12 small-12 columns poster_title">
+            <%= link_to show.name, show_path(show)%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="paginate">
+      <%= paginate @shows %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+<div class="row space-top">
+<div class="large-12 columns">
+  <div class="row">
+    <div class="large-3 columns">
+      <%= image_tag(@show.poster, alt: "Poster", class: "poster")%><br>
+    </div>
+    <div class="large-9 columns">
+      <div class="panel">
+        <h4><%= @show.name %></h4>
+        <h6><%= @show.genre.name %></h6>
+        <h6><%= @show.year %></h6>
+        <h6 class="subheader"><hr/><%= @show.description %></h6>
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+<div class="large-12">
+  <div class="panel">
+    <h5>Add Review</h5>
+      <%= form_for [@show, @review] do |f| %>
+        <div>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+        <div>
+          <%= f.label :body %>
+          <%= f.text_area :body %>
+        </div>
+        <div><%= f.submit "Add review", class: "tiny button active nice round"  %></div>
+      <% end %>
+  </div>
+</div>
+</div>
+
+<% @reviews.each do |review| %>
+<div class="row">
+<div class="large-12">
+  <div class="panel">
+    <div>
+      <h5><strong><%= review.title %></strong></h5>
+    </div>
+    <div>
+      <h6><%= review.body %></h6>
+        <p>
+          Current Score: <%= review.total_vote_score %>
+        </p>
+
+        <% if current_user.votes.find_by(review_id: review.id) == nil || current_user.votes.find_by(review_id: review.id).score != 1%>
+          <%= link_to "upvote", upvote_review_path(review), method: :post %>
+        <% else %>
+          <%= "upvote" %>
+        <% end %>
+        <% if current_user.votes.find_by(review_id: review.id) == nil || current_user.votes.find_by(review_id: review.id).score != -1%>
+          <%= link_to "downvote", downvote_review_path(review), method: :post %>
+        <% else %>
+          <%= "downvote" %>
+          <% end %>
+      <h6><% if current_user.username == review.user.username || current_user.role == "admin"%>
+      <%= link_to "Edit review", edit_show_review_path(@show, review), class: "tiny button active nice round"  %>
+      <%= link_to "Delete review", show_review_path(@show, review), class: "tiny button active nice round"  %></h6></hr>
+      <% end %>
+      <h6><%= link_to "Add comment", new_show_review_comment_path(@show, review, @comment), class: "tiny button active nice round"  %></h6>
+
+      <div class="panel">
+      <% review.comments.each do |comment| %>
+      <li>
+        <%= comment.text %>
+        <% if comment.owner?(current_user) %>
+          <p>
+            <%= link_to "Edit comment", edit_show_review_comment_path(@show, review, comment), class: "tiny button active nice round" %>
+            <%= link_to "Delete comment", show_review_comment_path(@show, review, comment), class: "tiny button active nice round" %></h6>
+          </p>
+        <% end %>
+      </li>
+      <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</div>
+<% end %>
+</div>

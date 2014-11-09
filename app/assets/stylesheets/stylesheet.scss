@@ -177,6 +177,10 @@
   margin-top: 3%;
 }
 
+.padding-top{
+  padding-top: 3%;
+}
+
 .space-left{
   margin-left: 4%;
 }
@@ -204,4 +208,24 @@ margin-bottom: 3%;
 .registration-fake{
   width: 90%;
   height: 90%;
+}
+
+// Pagination
+.paginate{
+  text-align: center;
+}
+
+//Shows page
+.right-panel{
+  -webkit-box-shadow: -1px 0px 1px 0px rgba(201,195,201,1);
+  -moz-box-shadow: -1px 0px 1px 0px rgba(201,195,201,1);
+  box-shadow: -1px 0px 1px 0px rgba(201,195,201,1);
+}
+
+.search-left{
+  font-weight: bold;
+}
+
+.search-list{
+  list-style-type: none;
 }
