@@ -1,0 +1,52 @@
+<div class="small-12 columns">
+  <div class="large-3 small-12 columns padding-top">
+    <p>
+      <form class="form-wrapper cf">
+        <input type="text" placeholder="Search here..." required>
+        <button type="submit">Search</button>
+      </form>
+    </p>
+    <p>
+      <h5 class="search-left">BROWSE:</h5>
+      <ul class="search-list">
+        <li><i class="fa fa-globe space-right"></i>Popular</li>
+        <li><i class="fa fa-star space-right"></i>Recommended For You</li>
+        <li><i class="fa fa-tags space-right"></i>Genres</li>
+      </ul>
+    </p>
+    <p>
+      <h5 class="search-left">SETTINGS:</h5>
+      <ul class="search-list">
+        <li><i class="fa fa-user space-right"></i>My Account</li>
+        <li><i class="fa fa-credit-card space-right"></i>Payment</li>
+        <li><i class="fa fa-tty space-right"></i>Customer Support</li>
+      </ul>
+    </p>
+  </div>
+  <div class="large-9 small-12 columns right-panel padding-top">
+    <div class="row">
+      <div class="small-6 columns">
+        <strong><span class="popular">Popular on SlickHD</span></strong>
+      </div>
+      <div class="small-6 columns" style="text-align: right;">
+        <strong><span class="view-all">VIEW ALL >></span></strong>
+      </div>
+      <hr>
+    </div>
+    <div class="row" data-equalizer>
+      <% @shows.each do |show| %>
+        <div class="large-2 small-6 left columns" data-equalizer-watch>
+          <div class="large-12 small-12 columns">
+            <%= link_to image_tag(show.poster, alt: "Poster", class: "poster"),show_path(show) %>
+          </div>
+          <div class="large-12 small-12 columns poster_title">
+            <%= link_to show.name, show_path(show), class: "title" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="paginate">
+      <%= paginate @shows %>
+    </div>
+  </div>
+</div>

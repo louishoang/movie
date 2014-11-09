@@ -34,6 +34,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'foundation-rails'
 gem 'rails_12factor'
 gem 'devise'
+gem 'kaminari'
+gem 'httparty'
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
