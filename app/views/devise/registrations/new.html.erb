@@ -1,18 +1,66 @@
-<h2>Sign up</h2>
+<div class="small-11 small-centered columns space-top">
+  <div class="small-12 columns container watch-now-box">
+    <span class="watch-now"><strong>WATCH NOW</strong> YOUR <strong>FAVORITE <br>
+    MOVIES & TV SHOWS</strong> FOR <strong>FREE</strong>
+    </span>
+  </div>
+  <div class="small-6 columns">
+    <img src="https://s3.amazonaws.com/movie-site-anton/registrationfake.png" class="registration-fake">
+  </div>
+  <div class="small-6 columns">
+    <h3 id="sign-up-free">Sign up for FREE!</h3>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+      <div><%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %></div>
 
-  <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %></div>
+      <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+        <%= f.password_field :password, autocomplete: "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+      <div><%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+      <div><%= f.submit "Continue", class: "button small continue" %></div>
+    <% end %>
 
-<%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+
+  <div class="small-12 columns space-top">
+    <div class="small-5 columns space-left">
+      <h2><strong>Why Join Video Site</strong></h2>
+      <p>
+        Join hundreds of thousands of satisfied members of MediaContent who became tired of searching for Movies & TV shows online, and now enjoy the hottest new Movies & TV shows and timeless classics on our site. It's HERE and it's FREE. Here are just a few reasons to join:
+        <ul>
+          <li>Your ideas</li>
+          <li>Your ideas</li>
+          <li>Your ideas</li>
+        </ul>
+        <p>
+          Find out why thousands of people are joining every day.
+          Fill out the signup form to start enjoying what we have to offer today!
+        </p>
+      </p>
+    </div>
+    <div class="small-6 columns" style>
+      <ul>
+        <li><h4>Free Unlimited Access</h4>
+          Experience all the content you could possibly want from our comprehensive library of timeless classics and new releases.
+        </li>
+        <li><h4>Search for anything.</h4>
+          MediaContent makes it easy to find what you’re looking for, whether it’s a game, song, book or movie. And finding friends or people who can help you discover great new titles is just as simple.
+        </li>
+        <li><h4>Thousands of titles and counting...</h4>
+          Sometimes only the best content will do. MediaContent has a huge library of titles on demand and we’re adding new content everyday!
+        </li>
+        <li><h4>All platforms</h4>
+         Access your titles anywhere on any device including PC, Tablet, Mobile, PS3, Xbox, and Smart TVs.
+        </li>
+      </ul>
+
+    </div>
+  </div>
+

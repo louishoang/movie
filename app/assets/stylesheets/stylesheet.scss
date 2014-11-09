@@ -1,3 +1,14 @@
+// FOOTER
+.footer{
+  border-top: solid grey;
+}
+// FLASH
+.notice-flash{
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  margin-top: 5px;
+}
+
 /*WELCOME PAGE*/
 .welcome-bg{
   background-image: url("https://s3.amazonaws.com/movie-site-anton/background.jpg");
@@ -48,7 +59,7 @@
 
 .second_welcome{
   width: 100%;
-  height: 25%;
+  height: 65%;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.3);
   margin-top: -3%;
@@ -57,9 +68,9 @@
 
 .third_welcome{
   width: 100%;
-  height: 10%;
+  height: auto;
   position: absolute;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: white;
   margin-top: -1%;
   z-index: 2;
   text-align: center;
@@ -71,7 +82,7 @@
   height: 50%;
   position: absolute;
   background-color: rgba(255, 255, 255, 0);
-  margin-top: -23%;
+  margin-top: -22%;
   border: none;
 }
 
@@ -86,6 +97,16 @@
 .line-right {float: right;margin-top: 25px;margin-right: 15px;}
 
 .forth_welcome{
+  position: relative;
+  width: 100%;
+  height: 60%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+.fifth_welcome{
   background-image: url("https://s3.amazonaws.com/movie-site-anton/2.jpg");
   position: relative;
   width: 100%;
@@ -96,20 +117,49 @@
   background-attachment: fixed;
 }
 
+.six_welcome{
+  width: 100%;
+  height: 10%;
+  background-color: white;
+}
 
+.end{
+  margin-top: 1%;
+}
+
+.panel-customized{
+  background-color: rgba(255, 255, 255, 0.3);
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
+.circle-icons{
+  width: 70%;
+  height: 70%;
+}
+
+.circle-icons-three{
+  width: 20%;
+  height: 20%;
+  margin-top: -1.5%;
+}
+
+.second-circle{
+  margin-left: 5%;
+}
 /*welcome end*/
 
 /*TOP BAR*/
+
 .top-divider{
   height: 0.8%;
   background: -webkit-linear-gradient(left, #0165B1, #0165B1 10%, #00A7DB 10%, #9AC430 15%, #9AC430 10%, #A62698);
-  margin-top: 76px;
+  margin-top: 65px;
 }
 
 .nav-items{
   color: #666C73;
   font-size: 0.8em;
-  margin: 4.5% auto;
   margin-right: 20px;
   font-weight: bold;
 }
@@ -122,4 +172,36 @@
   background: #207BF0;
 }
 
+// All Pages
+.space-top{
+  margin-top: 3%;
+}
 
+.space-left{
+  margin-left: 4%;
+}
+
+// Registration
+.watch-now{
+  color: #393939;
+  font-size: 4em;
+}
+
+.watch-now-box{
+text-align: center;
+margin-bottom: 3%;
+}
+
+#sign-up-free{
+  color: #6DC444;
+  font-weight: bold;
+}
+
+.continue{
+  background-color: #5CB85C;
+}
+
+.registration-fake{
+  width: 90%;
+  height: 90%;
+}
