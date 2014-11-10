@@ -22,7 +22,7 @@
 }
 
 .intro-container {
-  padding-top: 3%;
+  padding-top: 7%;
 }
 
 .intro{
@@ -411,4 +411,38 @@ margin-bottom: 3%;
 .form-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
     border: 0;
     padding: 0;
+}
+
+//SHOWS SHOW PAGE
+.video-player video{
+  width: 100%;
+  height: 100%;
+}
+
+.leadgen {
+    background: rgba(0, 0, 0, 0.9);
+    width: 97%;
+    height: 80%;
+    display: none;
+    position: absolute;
+    margin-top: -52%;
+    z-index: 3;
+    text-align: center;
+  }
+
+.lead-text{
+  color: white;
+  font: 'Tahoma', 'lucida sans';
+  font-size: 1em;
+}
+
+.lead-image img{
+  width: 40%;
+  height: 40%;
+}
+
+.create-free-account{
+  background-color: #359987;
+  color: white;
+  margin-top: 3.5%;
 }

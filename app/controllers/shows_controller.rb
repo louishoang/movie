@@ -11,7 +11,7 @@ class ShowsController < ApplicationController
 
   def show
     @show = Show.find(params[:id])
-    @reviews = @show.reviews.order(created_at: :desc).includes(:comments, :votes)
+    @reviews = @show.reviews.order(created_at: :desc).includes(:comments)
     @review = Review.new
     @comment = Comment.new
   end

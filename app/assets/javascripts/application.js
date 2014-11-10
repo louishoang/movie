@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require owl.carousel
+//= require leadgen.js
 //= require_tree .
 
 

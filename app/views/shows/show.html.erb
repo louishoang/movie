@@ -1,6 +1,24 @@
 <div class="row space-top">
-  <div class="small-10 small-offset-1 offcolumns">
-    Video Player here
+  <div class="small-12 columns video-player">
+    <video controls="controls" class="video">
+      <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="leadgen">
+      <div class="small-10 small-offset-1 columns">
+        <div class="small-12 columns lead-image">
+          <img src="https://s3.amazonaws.com/movie-site-anton/movie-reels-and-popcorn.png">
+        </div>
+        <div class="small-12 columns lead-text">
+        Our library can be streamed from certain countries only.<br>
+        Please, see if you are eligible to stream or download our content by creating an account.<br>
+        You must create a FREE account in order to stream or download this movie.
+        </div>
+        <div>
+          <%= link_to "CREATE A FREE ACCOUNT", new_user_registration_path, class: "button create-free-account" %>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="small-12 columns">
     <div class="row">
@@ -47,27 +65,14 @@
             </div>
           <div>
             <h6><%= review.body %></h6>
-              <p>
-                Current Score: <%= review.total_vote_score %>
-              </p>
-
-              <% if current_user.votes.find_by(review_id: review.id) == nil || current_user.votes.find_by(review_id: review.id).score != 1%>
-                <%= link_to "upvote", upvote_review_path(review), method: :post %>
-              <% else %>
-                <%= "upvote" %>
-              <% end %>
-              <% if current_user.votes.find_by(review_id: review.id) == nil || current_user.votes.find_by(review_id: review.id).score != -1%>
-                <%= link_to "downvote", downvote_review_path(review), method: :post %>
-              <% else %>
-                <%= "downvote" %>
-              <% end %>
             <h6>
-              <% if current_user.username == review.user.username || current_user.role == "admin"%>
+              <% if current_user.email == review.user.email || current_user.role == "admin"%>
                 <%= link_to "Edit review", edit_show_review_path(@show, review), class: "tiny button active nice round"  %>
-                <%= link_to "Delete review", show_review_path(@show, review), class: "tiny button active nice round"  %></h6></hr>
+                <%= link_to "Delete review", show_review_path(@show, review), class: "tiny button active nice round"  %>
+            </h6>
+            <%= link_to "Add comment", new_show_review_comment_path(@show, review, @comment), class: "tiny button active nice round"  %>
               <% end %>
-            <h6><%= link_to "Add comment", new_show_review_comment_path(@show, review, @comment), class: "tiny button active nice round"  %></h6>
-
+            <% if review.comments.size > 0 %>
             <div class="panel">
               <% review.comments.each do |comment| %>
                 <li>
@@ -81,6 +86,7 @@
                 </li>
               <% end %>
             </div>
+            <% end %>
           </div>
         </div>
       </div>

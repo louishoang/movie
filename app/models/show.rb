@@ -13,9 +13,4 @@ class Show < ActiveRecord::Base
     presence: true
   validates :genre,
     presence: true
-
-  def average_rating
-    reviews.average(:rating).to_f
-  end
-
 end
