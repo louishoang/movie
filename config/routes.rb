@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root "welcome#index"
   get "verify/payment" => 'verify#index', as: :verify
 
+  resources :users, only: [:show, :index]
   resources :shows do
     resources :reviews do
       resources :comments
