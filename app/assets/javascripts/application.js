@@ -19,10 +19,17 @@
 //= require_tree .
 
 
-$(function(){ $(document).foundation({
-  equalizer : {
+$(function(){
+  $(document).foundation({
+    equalizer : {
       // Specify if Equalizer should make elements equal height once they become stacked.
       equalize_on_stack: true
+    }
+  });
+
+  $('video').on('play', function() {
+    if ( $( ".leadgen" ).is( ":hidden" ) ) {
+        $( ".leadgen" ).delay( 2000 ).slideDown( "slow" );
     }
   });
 });
