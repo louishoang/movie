@@ -14,14 +14,19 @@
         <li><i class="fa fa-tags space-right"></i>Genres</li>
       </ul>
     </p>
-    <p>
-      <h5 class="search-left">SETTINGS:</h5>
-      <ul class="search-list">
-        <li><i class="fa fa-user space-right"></i>My Account</li>
-        <li><i class="fa fa-credit-card space-right"></i>Payment</li>
-        <li><i class="fa fa-tty space-right"></i>Customer Support</li>
-      </ul>
-    </p>
+    <% if user_signed_in? %>
+      <p>
+        <h5 class="search-left">SETTINGS:</h5>
+        <ul class="search-list">
+          <li>
+            <i class="fa fa-user space-right"></i>
+            <%= link_to "My Account", user_path(current_user) %>
+          </li>
+          <li><i class="fa fa-credit-card space-right"></i>Payment</li>
+          <li><i class="fa fa-tty space-right"></i>Customer Support</li>
+        </ul>
+      </p>
+    <% end %>
   </div>
   <div class="large-9 small-12 columns right-panel padding-top">
     <div class="row">
