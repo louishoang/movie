@@ -30,15 +30,20 @@
             <li class="nav-items">
               <%= link_to "Browse Movies", shows_path %>
             </li>
-            <li class="nav-items">
-              <%= link_to "Price", root_path %>
-            </li>
-            <li class="nav-items">
-              <%= link_to "How it works", root_path %>
-            </li>
+            <% if !user_signed_in? %>
+              <li class="nav-items">
+                <%= link_to "Price", root_path(:anchor => "sixth_welcome") %>
+              </li>
+              <li class="nav-items">
+                <%= link_to "How it works", root_path(:anchor => "how_it_works") %>
+              </li>
+            <% end %>
             <% if user_signed_in? %>
               <li class="nav-items">
-                <%= link_to "|| Sign Out ||", destroy_user_session_path, :method => :delete %>
+                <%= link_to "|| Sign Out ", destroy_user_session_path, :method => :delete %>
+              </li>
+              <li class="nav-items">
+                <%= link_to "My account ||", root_path %>
               </li>
             <% else %>
               <li class="nav-items">
