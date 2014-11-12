@@ -38,6 +38,7 @@ gem 'kaminari'
 gem 'httparty'
 gem 'font-awesome-rails'
 gem 'owlcarousel-rails'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
