@@ -23,7 +23,7 @@
 }
 
 .intro-container {
-  padding-top: 7%;
+  padding-top: 4%;
 }
 
 .intro{
@@ -292,6 +292,9 @@ margin-bottom: 3%;
 }
 
 //Shows index page
+.hidden{
+  display: none;
+}
 .slideshow{
   text-align: center;
 }
@@ -434,7 +437,7 @@ margin-bottom: 3%;
 }
 
 /* Form submit button */
-.form-wrapper button {
+.form-wrapper .form_submit {
     overflow: visible;
     position: relative;
     float: right;
@@ -451,17 +454,17 @@ margin-bottom: 3%;
     text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
 }
 
-.form-wrapper button:hover{
+.form-wrapper .form_submit:hover{
     background: #e54040;
 }
 
-.form-wrapper button:active,
-.form-wrapper button:focus{
+.form-wrapper .form_submit:active,
+.form-wrapper .form_submit:focus{
     background: #c42f2f;
     outline: 0;
 }
 
-.form-wrapper button:before { /* left arrow */
+.form-wrapper .form_submit:before { /* left arrow */
     content: '';
     position: absolute;
     border-width: 8px 8px 8px 0;
@@ -471,16 +474,16 @@ margin-bottom: 3%;
     left: -6px;
 }
 
-.form-wrapper button:hover:before{
+.form-wrapper .form_submit:hover:before{
     border-right-color: #e54040;
 }
 
-.form-wrapper button:focus:before,
-.form-wrapper button:active:before{
+.form-wrapper .form_submit:focus:before,
+.form-wrapper .form_submit:active:before{
         border-right-color: #c42f2f;
 }
 
-.form-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
+.form-wrapper .form_submit::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
     border: 0;
     padding: 0;
 }

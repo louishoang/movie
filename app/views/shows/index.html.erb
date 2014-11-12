@@ -1,11 +1,11 @@
 <div class="small-12 columns">
   <div class="large-3 small-12 columns padding-top">
-    <p>
-      <form class="form-wrapper cf" action="/shows?search=" method="get">
-        <input type="text" placeholder="Search here..." required>
-        <button type="submit">Search</button>
-      </form>
-    </p>
+    <div class="form-wrapper cf search-visible">
+      <%= form_tag("/shows", method: "get", class: "hidden-search") do %>
+        <%= search_field_tag "search", value = nil, options = {placeholder: "Search..."} %>
+        <%= submit_tag "Search",data: { disable_with: "..." }, class: "form_submit" %>
+      <% end %>
+    </div>
     <p>
       <h5 class="search-left">BROWSE:</h5>
       <ul class="search-list">
