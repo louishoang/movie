@@ -1,6 +1,7 @@
 // FOOTER
 .footer{
   border-top: solid grey;
+  height: 10%;
 }
 // FLASH
 .notice-flash{
@@ -117,10 +118,77 @@
   background-attachment: fixed;
 }
 
-.six_welcome{
+.sixth_welcome{
+  padding-top: 1%;
   width: 100%;
-  height: 10%;
+  height: auto;
+  background-color: #F5F5F5;
+  text-align: center;
+}
+
+.plan-wrapper{
+  text-align: center;
+}
+
+.no-binding-period{
+  font-size: 0.6em;
+}
+
+.price-wrapper{
+  margin-top: 5%;
+}
+
+#trial{
+  color: #207BF0;
+  font-size: 1.2em;
+}
+
+#thirty-day{
+  color: #68AA10;
+  font-size: 1.2em;
+}
+
+#one-year{
+  color: #FE5D05;
+  font-size: 1.2em;
+}
+
+#choose-a-plan{
+  color: #6D7379;
+}
+
+.price-table{
+  width: 100%;
+  padding-top: 2%;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 5px 5px 5px black;
+  -webkit-box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 5px black;
+}
+
+.second-price-tab{
+  margin-left: 40%;
+}
+
+.price-table tr th{
+  text-align: center;
+}
+
+.price-table tr td{
   background-color: white;
+  text-align: center;
+}
+
+.price{
+  padding: 2px auto;
+  color: #7C898E;
+  font-size: 2em;
+}
+
+.price-per-day{
+  color: #7C898E;
+  font-size: 1em;
 }
 
 .end{
@@ -166,6 +234,10 @@
 
 .green{
   background: #68AA10;
+}
+
+.orange{
+  background: #FE5D05;
 }
 
 .blue{
