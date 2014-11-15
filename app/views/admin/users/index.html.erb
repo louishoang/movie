@@ -15,13 +15,15 @@
       <%= simple_form_for :search,
                           url: admin_users_path,
                           :method => :get do |f| %>
-        <div class="small-10 columns">
+        <div class="small-8 columns">
           <%= f.search_field :search,
                            placeholder: 'Example: user@domain.com'
                           %>
         </div>
         <div class="small-2 columns">
           <%= f.submit "Search", class: "button small round green postfix" %>
+        </div>
+        <div class="small-2 columns">
         </div>
       <% end %>
     </div>
@@ -33,22 +35,26 @@
             <th>Created at</th>
             <th>Last sign in at</th>
             <th>Role</th>
-            <th>Edit</th>
-            <th>Delete</th>
+            <th>
+              Edit
+            </th>
+            <th>
+              Delete
+            </th>
           </tr>
         </thead>
         <tbody>
           <% @users.each do |user| %>
           <tr>
             <td><%= user.email %></td>
-            <td><%= user.created_at %></td>
-            <td><%= user.last_sign_in_at %></td>
+            <td><%= user.created_at.to_s(:format_date) %></td>
+            <td><%= user.last_sign_in_at.to_s(:format_date_time) %></td>
             <td><%= user.role %></td>
             <td>
-              Edit
+              <i class="fa fa-pencil-square-o"></i>
             </td>
             <td>
-              Delete
+              <i class="fa fa-trash"></i>
             </td>
           </tr>
           <% end %>
