@@ -41,14 +41,14 @@ ActiveRecord::Schema.define(version: 20141115064419) do
   end
 
   create_table "shows", force: true do |t|
-    t.string   "name",        null: false
-    t.text     "description", null: false
-    t.integer  "genre_id",    null: false
+    t.string   "name",                    null: false
+    t.text     "description",             null: false
+    t.integer  "genre_id",                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "year"
     t.string   "poster"
-    t.integer  "viewcount"
+    t.integer  "viewcount",   default: 0
   end
 
   create_table "users", force: true do |t|

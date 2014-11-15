@@ -1,6 +1,6 @@
 class AddViewcountToShows < ActiveRecord::Migration
   def up
-    add_column :shows, :viewcount, :integer, defaut: 0
+    add_column :shows, :viewcount, :integer, default: 0
   end
 
   def down
