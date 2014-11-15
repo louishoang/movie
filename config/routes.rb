@@ -10,6 +10,12 @@ Rails.application.routes.draw do
       resources :comments
     end
   end
+
+  namespace :admin do
+    resources :users
+    resources :shows
+    resources :sales
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

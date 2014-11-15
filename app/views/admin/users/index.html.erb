@@ -1,0 +1,62 @@
+<div class="small-12 columns">
+  <div class="large-3 small-12 columns padding-top">
+    <%= render "admin/side_nav" %>
+  </div>
+  <div class="large-9 small-12 columns right-panel padding-top">
+    <div class="row">
+      <div class="small-6 columns">
+        <strong>
+          <span class="popular">Manage Users</span>
+        </strong>
+      </div>
+      <hr>
+    </div>
+    <div class="row postfix-round">
+      <%= simple_form_for :search,
+                          url: admin_users_path,
+                          :method => :get do |f| %>
+        <div class="small-10 columns">
+          <%= f.search_field :search,
+                           placeholder: 'Example: user@domain.com'
+                          %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Search", class: "button small round green postfix" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="row collapse">
+      <table>
+        <thead>
+          <tr>
+            <th>Email</th>
+            <th>Created at</th>
+            <th>Last sign in at</th>
+            <th>Role</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <td><%= user.email %></td>
+            <td><%= user.created_at %></td>
+            <td><%= user.last_sign_in_at %></td>
+            <td><%= user.role %></td>
+            <td>
+              Edit
+            </td>
+            <td>
+              Delete
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="paginate">
+      <%= paginate @users %>
+    </div>
+  </div>
+</div>
