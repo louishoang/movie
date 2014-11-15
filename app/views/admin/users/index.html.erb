@@ -54,7 +54,9 @@
               <i class="fa fa-pencil-square-o"></i>
             </td>
             <td>
-              <i class="fa fa-trash"></i>
+              <%= link_to admin_user_path(user), method: :delete do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
             </td>
           </tr>
           <% end %>
