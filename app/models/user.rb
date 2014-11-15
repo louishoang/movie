@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
 
   paginates_per 25
 
+  validates :role, inclusion: { in: %w(trial member admin),
+            message: "Role must be either trial, member or admin;
+                         all lower case"}
+
   def is_admin?
     role == 'admin'
   end

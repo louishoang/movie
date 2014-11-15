@@ -1,0 +1,11 @@
+<div class="row space-top full-page">
+  <%= link_to '<< Back', admin_users_path %>
+  <div class="space-top">
+    <%= simple_form_for @user, :url => admin_user_path, method: :patch do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :email, required: true %>
+      <%= f.input :role, required: true %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
