@@ -3,7 +3,12 @@ module Admin
     before_filter :admin_authorize!
 
     def index
-      @users = User.order(:email).page params[:page]
+      if params[:search]
+        query = params[:search][:search]
+        @users = User.where("email ILIKE ?", "%#{query}%").order(:email).page params[:page]
+      else
+        @users = User.order(:email).page params[:page]
+      end
     end
   end
 end

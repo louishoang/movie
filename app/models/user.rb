@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  paginates_per 20
+  paginates_per 25
 
   def is_admin?
     role == 'admin'
