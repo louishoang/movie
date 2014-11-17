@@ -17,6 +17,7 @@
 //= require owl.carousel
 //= require leadgen.js
 //= require genre_drop_down.js
+//= require jquery.remotipart
 //= require_tree .
 
 
