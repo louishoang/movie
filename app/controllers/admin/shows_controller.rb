@@ -7,6 +7,21 @@ module Admin
       @shows = Show.order(:created_at).page params[:page]
     end
 
+    def new
+      @show = Show.new
+    end
+
+    def create
+      @show = Show.new(show_params)
+      if @show.save
+        flash[:notice]= "Movie is added successfully"
+        redirect_to admin_shows_path
+      else
+        flash[:notice]= "Please check your input"
+        render "new"
+      end
+    end
+
     def edit
     end
 
@@ -26,11 +41,10 @@ module Admin
       redirect_to admin_shows_path
     end
 
-
     private
 
     def show_params
-      params.require(:show).permit(:name, :genre, :year, :poster)
+      params.require(:show).permit(:name, :genre_id, :year, :poster, :description, :video)
     end
 
     def set_show
