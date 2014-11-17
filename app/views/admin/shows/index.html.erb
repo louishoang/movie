@@ -1,0 +1,79 @@
+<div class="small-12 columns">
+  <div class="large-3 small-12 columns padding-top">
+    <%= render "admin/side_nav" %>
+  </div>
+  <div class="large-9 small-12 columns right-panel padding-top">
+    <div class="row">
+      <div class="small-6 columns">
+        <strong>
+          <span class="popular">Manage Movies</span>
+        </strong>
+      </div>
+      <hr>
+    </div>
+    <div class="row postfix-round">
+      <%= simple_form_for :search,
+                          url: admin_users_path,
+                          :method => :get do |f| %>
+        <div class="small-8 columns">
+          <%= f.search_field :search,
+                           placeholder: 'Example: user@domain.com'
+                          %>
+        </div>
+        <div class="small-2 columns">
+          <%= f.submit "Search", class: "button small round green postfix" %>
+        </div>
+        <div class="small-2 columns">
+        </div>
+      <% end %>
+    </div>
+    <div class="row collapse">
+      <%= link_to "Add new movie", new_admin_show_path, class: "button small round green" %>
+    </div>
+    <div class="row collapse">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Created at</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>Poster</th>
+            <th>ViewCount</th>
+            <th>
+              Edit
+            </th>
+            <th>
+              Delete
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @shows.each do |show| %>
+          <tr>
+            <td><%= show.name %></td>
+            <td><%= show.created_at.to_s(:format_date) %></td>
+            <td><%= show.genre.name %></td>
+            <td><%= show.year %></td>
+            <td><%= show.poster %></td>
+            <td><%= show.viewcount %></td>
+            <td>
+              <%= link_to edit_admin_show_path(show) do %>
+                <i class="fa fa-pencil-square-o"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to admin_show_path(show), method: :delete, data: { confirm: 'Proceed to delete this show?' } do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="paginate">
+      <%= paginate @shows %>
+    </div>
+  </div>
+</div>

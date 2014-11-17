@@ -1,0 +1,13 @@
+<div class="row space-top full-page">
+  <%= link_to '<< Back', admin_shows_path %>
+  <div class="space-top">
+    <%= simple_form_for @show, :url => admin_show_path, method: :patch do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :name, required: true %>
+      <%= f.input :genre_id, required: true %>
+      <%= f.input :year, required: true %>
+      <%= f.input :poster, required: true %>
+      <%= f.button :submit %>
+    <% end %>
+  </div>
+</div>
