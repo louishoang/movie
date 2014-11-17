@@ -14,7 +14,17 @@
           <a href="/shows?popular=true">Popular</a>
         </li>
         <li><i class="fa fa-star space-right"></i>Recommended For You</li>
-        <li><i class="fa fa-tags space-right"></i>Genres</li>
+        <li>
+          <i class="fa fa-tags space-right"></i>
+          <span id="genres">Genres<span>
+          <div class="genres-list hidden">
+            <ul>
+              <% @genres.each do |genre| %>
+                <li><a href="/shows?genre=<%= genre.id %>"><%= genre.name.capitalize %></a></li>
+              <% end %>
+            </ul>
+          </div>
+        </li>
       </ul>
     </p>
     <% if user_signed_in? %>
@@ -37,7 +47,11 @@
         <strong><span class="popular">Popular on SlickHD</span></strong>
       </div>
       <div class="small-6 columns" style="text-align: right;">
-        <strong><span class="view-all">VIEW ALL >></span></strong>
+        <strong>
+          <span class="view-all">
+            <a href="/shows?popular=true">VIEW ALL >></a>
+          </span>
+        </strong>
       </div>
       <hr>
     </div>
@@ -58,7 +72,11 @@
         <strong><span class="popular">Newest on SlickHD</span></strong>
       </div>
       <div class="small-6 columns" style="text-align: right;">
-        <strong><span class="view-all">VIEW ALL >></span></strong>
+        <strong>
+          <span class="view-all">
+            <a href="/shows?newest=true">VIEW ALL >></a>
+          </span>
+        </strong>
       </div>
       <hr>
     </div>

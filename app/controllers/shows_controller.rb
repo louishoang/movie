@@ -1,13 +1,18 @@
 class ShowsController < ApplicationController
 
   def index
+    @genres = Genre.all
     @ten_newest = Show.order(created_at: :desc).limit(10)
     if params[:search]
-      @shows = Show.search(params[:search]).order("name").page(params[:page])
+      @shows = Show.search(params[:search]).order("created_at").page(params[:page])
     elsif params[:popular] == "true"
       @shows = Show.order(viewcount: :desc).page(params[:page])
+    elsif params[:genre]
+      @shows = Show.where("genre_id = ?", params[:genre]).order("created_at").page(params[:page])
+    elsif params[:newest] == "true"
+      @shows = Show.order(created_at: :desc).page(params[:page])
     else
-      @shows = Show.order("name").page(params[:page])
+      @shows = Show.order("created_at").page(params[:page])
     end
   end
 
