@@ -1,7 +1,7 @@
 <div class="row space-top full-page">
   <%= link_to '<< Back', admin_shows_path %>
   <div class="space-top">
-    <%= simple_form_for [:admin, @show] do |f| %>
+    <%= simple_form_for [:admin, @show], remote: true do |f| %>
       <%= f.error_notification %>
       <%= f.input :name, required: true %>
       <%= f.input :genre_id, required: true %>
@@ -15,6 +15,9 @@
       <div class="small-4 small-offset-1 columns space-top">
         <%= f.button :submit, class: "button small round green" %>
         <%= f.button :button, 'Cancel', :type => 'reset', :class => 'button small round green' %>
+      </div>
+      <div class="progress small secondary radius round">
+        <span class="meter" style="width: [0 - 100]%"></span>
       </div>
     <% end %>
   </div>

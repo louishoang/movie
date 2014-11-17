@@ -1,0 +1,3 @@
+<% if @photo.new_record? %>
+  alert('The moviecould not be uploaded: <%= f @show.errors.full_messages.join(', ').html_safe %>');
+<% end %>

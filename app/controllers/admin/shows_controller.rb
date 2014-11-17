@@ -12,13 +12,12 @@ module Admin
     end
 
     def create
-      @show = Show.new(show_params)
-      if @show.save
+      respond_to do |format|
+        @show = Show.new(show_params)
+        @show.save
         flash[:notice]= "Movie is added successfully"
-        redirect_to admin_shows_path
-      else
-        flash[:notice]= "Please check your input"
-        render "new"
+        format.html {redirect_to admin_shows_path}
+        format.js
       end
     end
 
