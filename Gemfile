@@ -40,6 +40,12 @@ gem 'font-awesome-rails'
 gem 'owlcarousel-rails'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'simple_form'
+gem 'dragonfly'
+gem 'dragonfly-s3_data_store'
+group :production do
+  gem 'rack-cache', :require => 'rack/cache'
+end
+gem 'remotipart', '~> 1.2'
 
 
 group :development, :test do

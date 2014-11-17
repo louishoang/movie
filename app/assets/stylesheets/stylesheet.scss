@@ -554,3 +554,22 @@ margin-bottom: 3%;
 .full-page{
   height: 85%;
 }
+
+.file-upload-container{
+  border: 1px solid #efefef;
+  padding:10px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  background: #fbfbfa;
+}
+
+.file-upload-button{
+  position: absolute;
+  height: 50px;
+  top: -10px;
+  left: -10px;
+  cursor: pointer;
+  opacity: 0;
+  filter:alpha(opacity=0);
+}

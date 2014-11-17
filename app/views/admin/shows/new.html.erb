@@ -1,0 +1,21 @@
+<div class="row space-top full-page">
+  <%= link_to '<< Back', admin_shows_path %>
+  <div class="space-top">
+    <%= simple_form_for [:admin, @show] do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :name, required: true %>
+      <%= f.input :genre_id, required: true %>
+      <%= f.input :year, required: true %>
+      <%= f.input :poster, required: true %>
+      <%= f.input :description, required: true %>
+      <div class="file-upload-container">
+        <%= f.label :video, required: true %>
+        <%= f.file_field :video, required: true %>
+      </div>
+      <div class="small-4 small-offset-1 columns space-top">
+        <%= f.button :submit, class: "button small round green" %>
+        <%= f.button :button, 'Cancel', :type => 'reset', :class => 'button small round green' %>
+      </div>
+    <% end %>
+  </div>
+</div>
