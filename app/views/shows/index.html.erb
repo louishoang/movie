@@ -9,9 +9,25 @@
     <p>
       <h5 class="search-left">BROWSE:</h5>
       <ul class="search-list">
-        <li><i class="fa fa-globe space-right"></i>Popular</li>
-        <li><i class="fa fa-star space-right"></i>Recommended For You</li>
-        <li><i class="fa fa-tags space-right"></i>Genres</li>
+        <li>
+          <i class="fa fa-globe space-right"></i>
+          <a href="/shows?popular=true">Popular</a>
+        </li>
+        <li>
+          <i class="fa fa-star space-right"></i>
+          <a href="/shows?recommend=true">Recommended For You</a>
+        </li>
+        <li>
+          <i class="fa fa-tags space-right"></i>
+          <span id="genres">Genres<span>
+          <div class="genres-list hidden">
+            <ul>
+              <% @genres.each do |genre| %>
+                <li><a href="/shows?genre=<%= genre.id %>"><%= genre.name.capitalize %></a></li>
+              <% end %>
+            </ul>
+          </div>
+        </li>
       </ul>
     </p>
     <% if user_signed_in? %>
@@ -22,8 +38,21 @@
             <i class="fa fa-user space-right"></i>
             <%= link_to "My Account", user_path(current_user) %>
           </li>
-          <li><i class="fa fa-credit-card space-right"></i>Payment</li>
-          <li><i class="fa fa-tty space-right"></i>Customer Support</li>
+          <li>
+            <i class="fa fa-tty space-right">
+            </i>Customer Support
+          </li>
+        </ul>
+      </p>
+    <% end %>
+    <% if current_user && current_user.role == "admin"  %>
+      <p>
+        <h5 class="search-left">ADMIN SESSION:</h5>
+        <ul class="search-list">
+          <li>
+            <i class="fa fa-user space-right"></i>
+            <%= link_to "Admin Panel", admin_users_path %>
+          </li>
         </ul>
       </p>
     <% end %>
@@ -34,7 +63,11 @@
         <strong><span class="popular">Popular on SlickHD</span></strong>
       </div>
       <div class="small-6 columns" style="text-align: right;">
-        <strong><span class="view-all">VIEW ALL >></span></strong>
+        <strong>
+          <span class="view-all">
+            <a href="/shows?popular=true">VIEW ALL >></a>
+          </span>
+        </strong>
       </div>
       <hr>
     </div>
@@ -55,7 +88,11 @@
         <strong><span class="popular">Newest on SlickHD</span></strong>
       </div>
       <div class="small-6 columns" style="text-align: right;">
-        <strong><span class="view-all">VIEW ALL >></span></strong>
+        <strong>
+          <span class="view-all">
+            <a href="/shows?newest=true">VIEW ALL >></a>
+          </span>
+        </strong>
       </div>
       <hr>
     </div>
