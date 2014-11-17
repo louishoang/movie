@@ -38,8 +38,21 @@
             <i class="fa fa-user space-right"></i>
             <%= link_to "My Account", user_path(current_user) %>
           </li>
-          <li><i class="fa fa-credit-card space-right"></i>Payment</li>
-          <li><i class="fa fa-tty space-right"></i>Customer Support</li>
+          <li>
+            <i class="fa fa-tty space-right">
+            </i>Customer Support
+          </li>
+        </ul>
+      </p>
+    <% end %>
+    <% if current_user && current_user.role == "admin"  %>
+      <p>
+        <h5 class="search-left">ADMIN SESSION:</h5>
+        <ul class="search-list">
+          <li>
+            <i class="fa fa-user space-right"></i>
+            <%= link_to "Admin Panel", admin_users_path %>
+          </li>
         </ul>
       </p>
     <% end %>

@@ -378,6 +378,10 @@ margin-bottom: 3%;
   list-style-type: none;
 }
 
+.search-list li a{
+  text-decoration: none;
+  color: inherit;
+}
 //search
 .cf:before, .cf:after{
     content:"";
