@@ -43,7 +43,7 @@
                 <%= link_to "|| Sign Out ", destroy_user_session_path, :method => :delete %>
               </li>
               <li class="nav-items">
-                <%= link_to "My account ||", root_path %>
+                <%= link_to "My account ||", user_path(current_user) %>
               </li>
             <% else %>
               <li class="nav-items">
@@ -77,7 +77,7 @@
          Support
       </div>
       <div class="small-5 columns end" style="text-align: right">
-        Copyright @ 2014 MyVideoSite.com
+        Copyright @ 2014 SlickHD.com
       </div>
     </div>
     <%= javascript_include_tag "application" %>
