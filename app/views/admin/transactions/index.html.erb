@@ -10,8 +10,13 @@
         </strong>
       </div>
       <div class="small-6 columns" style="text-align: right">
-        <%= link_to "Add new transaction", new_admin_sale_path, class: "button tiny round green" %>
+        <%= link_to "Add new transaction", new_admin_transaction_path, class: "button tiny round green" %>
       </div>
+      <hr>
+    </div>
+    <div class="row collapse">
+      <h5><strong>Total sale: </strong><%=  "%05.2f" % @total %> USD</h5>
+      <h5><strong>Average receipt: </strong><%= "%05.2f" % @average %> USD</h5>
       <hr>
     </div>
     <div class="row collapse">
@@ -42,12 +47,12 @@
             <td><%= transaction.description %></td>
             <td><%= transaction.created_at.to_s(:format_date) %></td>
             <td>
-              <%= link_to edit_admin_sale_path(transaction) do %>
+              <%= link_to edit_admin_transaction_path(transaction) do %>
                 <i class="fa fa-pencil-square-o"></i>
               <% end %>
             </td>
             <td>
-              <%= link_to admin_sale_path(transaction), method: :delete, data: { confirm: 'Proceed to delete this transaction?' } do %>
+              <%= link_to admin_transaction_path(transaction), method: :delete, data: { confirm: 'Proceed to delete this transaction?' } do %>
                 <i class="fa fa-trash"></i>
               <% end %>
             </td>

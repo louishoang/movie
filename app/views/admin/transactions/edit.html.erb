@@ -1,7 +1,7 @@
 <div class="row space-top full-page">
   <%= link_to '<< Back', admin_shows_path %>
   <div class="space-top">
-    <%= simple_form_for @transaction, :url => admin_sales_path, method: :create do |f| %>
+    <%= simple_form_for [:admin, @transaction] do |f| %>
       <%= f.error_notification %>
       <%= f.input :name, required: true %>
       <%= f.input :source, required: true %>
