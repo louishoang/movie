@@ -37,6 +37,11 @@ module Admin
       end
     end
 
+    def destroy
+      @transaction.destroy
+      flash[:notice] = "Transaction has been deleted successfully"
+      redirect_to admin_transactions_path
+    end
     private
 
     def transaction_params
