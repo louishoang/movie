@@ -4,7 +4,7 @@ class CreateTransactions < ActiveRecord::Migration
       t.string :name, null: false
       t.string :source, null: false
       t.decimal :amount, null: false, precision: 8, scale: 2
-      t.string :type, null: false, default: "income"
+      t.string :transaction_type, null: false, default: "income"
       t.text :description
 
       t.timestamps

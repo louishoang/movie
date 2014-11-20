@@ -53,10 +53,10 @@ ActiveRecord::Schema.define(version: 20141120043841) do
   end
 
   create_table "transactions", force: true do |t|
-    t.string   "name",                                                   null: false
-    t.string   "source",                                                 null: false
-    t.decimal  "amount",      precision: 8, scale: 2,                    null: false
-    t.string   "type",                                default: "income", null: false
+    t.string   "name",                                                        null: false
+    t.string   "source",                                                      null: false
+    t.decimal  "amount",           precision: 8, scale: 2,                    null: false
+    t.string   "transaction_type",                         default: "income", null: false
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
