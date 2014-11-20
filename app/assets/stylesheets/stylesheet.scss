@@ -2,7 +2,26 @@
   height: 100%;
 }
 
+.note{
+  font-size: 0.6em;
+  font-weight: bold;
+}
+
 // FOOTER
+.end ul{
+  list-style-type: none;
+  display: inline-block;
+}
+
+.end ul li{
+  display: inline-block;
+}
+
+.link_footer{
+  color: inherit;
+  text-decoration: none;
+}
+
 .footer{
   border-top: solid grey;
   height: 10%;
