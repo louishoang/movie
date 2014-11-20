@@ -13,13 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.dataTables.min
+//= require dataTables.foundation
 //= require turbolinks
 //= require owl.carousel
 //= require leadgen.js
 //= require genre_drop_down.js
 //= require jquery.remotipart
 //= require_tree .
-
 
 $(function(){
   $(document).foundation({
@@ -34,4 +35,6 @@ $(function(){
         $( ".leadgen" ).delay( 2000 ).slideDown( "slow" );
     }
   });
+
+  $('#transactions').DataTable();
 });

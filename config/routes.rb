@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users
     resources :shows
-    resources :sales
+    resources :transactions
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

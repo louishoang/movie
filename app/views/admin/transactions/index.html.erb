@@ -1,0 +1,68 @@
+<div class="small-12 columns">
+  <div class="large-3 small-12 columns padding-top">
+    <%= render "admin/side_nav" %>
+  </div>
+  <div class="large-9 small-12 columns right-panel padding-top">
+    <div class="row">
+      <div class="small-6 columns">
+        <strong>
+          <span class="popular">Manage Sales</span>
+        </strong>
+      </div>
+      <div class="small-6 columns" style="text-align: right">
+        <%= link_to "Add new transaction", new_admin_transaction_path, class: "button tiny round green" %>
+      </div>
+      <hr>
+    </div>
+    <div class="row collapse">
+      <h5><strong>Total sale: </strong><%=  "%05.2f" % @total %> USD</h5>
+      <h5><strong>Average receipt: </strong><%= "%05.2f" % @average %> USD</h5>
+      <hr>
+    </div>
+    <div class="row collapse">
+      <table id="transactions" class="display">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Source</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>
+              Edit
+            </th>
+            <th>
+              Delete
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @transactions.each do |transaction| %>
+          <tr>
+            <td><%= transaction.name %></td>
+            <td><%= transaction.amount %></td>
+            <td><%= transaction.source %></td>
+            <td><%= transaction.transaction_type %></td>
+            <td><%= transaction.description %></td>
+            <td><%= transaction.created_at.to_s(:format_date) %></td>
+            <td>
+              <%= link_to edit_admin_transaction_path(transaction) do %>
+                <i class="fa fa-pencil-square-o"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to admin_transaction_path(transaction), method: :delete, data: { confirm: 'Proceed to delete this transaction?' } do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="paginate">
+      <%= paginate @transactions %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="row space-top full-page">
+  <%= link_to '<< Back', admin_shows_path %>
+  <div class="space-top">
+    <%= simple_form_for [:admin, @transaction] do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :name, required: true %>
+      <%= f.input :source, required: true %>
+      <%= f.input :amount, required: true %>
+      <%= f.input :transaction_type, collection: ["income", "expense"], required: true %>
+      <%= f.input :description %>
+      <%= f.button :submit, class: "button small round green" %>
+    <% end %>
+  </div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117145604) do
+ActiveRecord::Schema.define(version: 20141120043841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,16 @@ ActiveRecord::Schema.define(version: 20141117145604) do
     t.string   "poster"
     t.integer  "viewcount",   default: 0
     t.string   "video_uid"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.string   "name",                                                        null: false
+    t.string   "source",                                                      null: false
+    t.decimal  "amount",           precision: 8, scale: 2,                    null: false
+    t.string   "transaction_type",                         default: "income", null: false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
