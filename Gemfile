@@ -31,23 +31,35 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# template , foundation , bootstrap
 gem 'foundation-rails'
 gem 'rails_12factor'
+
+# login
 gem 'devise'
+#pagination
 gem 'kaminari'
+# seed
 gem 'httparty'
+# icon and font
 gem 'font-awesome-rails'
+#slide show
 gem 'owlcarousel-rails'
+# payment
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+# form helper
 gem 'simple_form'
+# upload and amazon s3
 gem 'dragonfly'
 gem 'dragonfly-s3_data_store'
 group :production do
   gem 'rack-cache', :require => 'rack/cache'
 end
+# upload multipart of a form via ajax
 gem 'remotipart', '~> 1.2'
 
-
+#test
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
