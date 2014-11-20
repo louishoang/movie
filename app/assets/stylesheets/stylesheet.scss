@@ -38,7 +38,7 @@
 .intro h3{
   color: white;
   text-align: center;
-  font-family: 'Signika', sans-serif;
+  font: "skolar", sans-serif;
 }
 
 .intro h2{
@@ -534,6 +534,36 @@ margin-bottom: 3%;
   margin-top: 3.5%;
 }
 
+.movie-page-title h3{
+  color: #359987;
+}
+
+
+// CSS fake review
+.comments-list{
+  list-style-type: none;
+}
+
+.comments-list ul{
+  list-style-type: none;
+}
+
+.author{
+  color: #359987;
+}
+
+.author i{
+  margin-right: 1%;
+}
+
+.date {
+  font-size: 0.7em;
+}
+
+.date i{
+  margin-right: 1%;
+}
+
 // USER PAGE
 .user-page{
   border-radius: 15px;
@@ -963,27 +993,3 @@ table.dataTable td {
   .dataTables_wrapper .dataTables_filter {
     margin-top: 0.5em; } }
 
-// CSS fake review
-.comments-list{
-  list-style-type: none;
-}
-
-.comments-list ul{
-  list-style-type: none;
-}
-
-.author{
-  color: #359987;
-}
-
-.author i{
-  margin-right: 1%;
-}
-
-.date {
-  font-size: 0.7em;
-}
-
-.date i{
-  margin-right: 1%;
-}

@@ -1,4 +1,7 @@
 <div class="row space-top">
+  <div class="movie-page-title">
+    <h3><%= @show.name.upcase %></h3>
+  </div>
   <div class="small-12 columns video-player">
     <% if !user_signed_in? %>
       <video controls="controls" class="video">

@@ -6,7 +6,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Tangerine" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
@@ -63,7 +63,7 @@
       </nav>
     </div>
     <div class="top-divider fixed"></div>
-    <% if notice %>
+    <% if notice || alert %>
       <div class="notice-flash">
         <p><%= notice %></p>
         <p><%= alert %></p>
