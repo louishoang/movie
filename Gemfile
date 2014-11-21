@@ -62,6 +62,8 @@ gem 'remotipart', '~> 1.2'
 gem 'kramdown'
 #fivestar review
 gem 'ratyrate'
+#social sharing
+gem 'social-share-button'
 
 #test
 group :development, :test do

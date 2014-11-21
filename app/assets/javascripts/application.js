@@ -20,6 +20,7 @@
 //= require leadgen.js
 //= require genre_drop_down.js
 //= require jquery.remotipart
+//= require social-share-button
 //= require_tree .
 
 $(function(){
