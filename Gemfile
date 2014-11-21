@@ -65,6 +65,10 @@ gem 'ratyrate'
 #social sharing
 gem 'social-share-button'
 
+group :development, :test do
+gem 'foreman'
+end
+
 #test
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
