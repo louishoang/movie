@@ -21,6 +21,11 @@
 }
 
 // FOOTER
+.end{
+   @media #{$small-only} {
+    text-align: center;
+  }
+}
 .end ul{
   list-style-type: none;
   display: inline-block;
@@ -38,6 +43,14 @@
 .footer{
   border-top: solid grey;
   height: 10%;
+
+}
+
+.copyright-footer{
+  text-align: right;
+   @media #{$small-only} {
+    text-align: center;
+  }
 }
 // FLASH
 .notice-flash{
@@ -60,6 +73,10 @@
 
 .intro-container {
   padding-top: 4%;
+  @media #{$small-only} {
+    width: 600px;
+    margin-left: -100px;
+   }
 }
 
 .intro{
@@ -101,6 +118,9 @@
   background-color: rgba(255, 255, 255, 0.3);
   margin-top: -3%;
   z-index: 2;
+  @media #{$small-only} {
+    display: none;
+  }
 }
 
 .third_welcome{
@@ -111,9 +131,15 @@
   margin-top: -1%;
   z-index: 2;
   text-align: center;
+  @media #{$small-only} {
+    display: none;
+  }
 }
 
 .screen{
+  @media #{$small-only} {
+    display: none;
+  }
   z-index: 7;
   width: 50%;
   height: 50%;
@@ -141,6 +167,9 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
+   @media #{$small-only} {
+    display: none;
+  }
 }
 
 .fifth_welcome{
@@ -152,6 +181,9 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
+   @media #{$small-only} {
+    display: none;
+  }
 }
 
 .sixth_welcome{
@@ -160,6 +192,9 @@
   height: auto;
   background-color: #F5F5F5;
   text-align: center;
+   @media #{$small-only} {
+    display: none;
+  }
 }
 
 .plan-wrapper{
