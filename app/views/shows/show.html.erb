@@ -41,7 +41,15 @@
           <h6><%= @show.genre.name %></h6>
           <h6><%= @show.year %></h6>
           <h6 class="subheader"><hr/><%= @show.description %></h6>
-          <h6><strong>Average Rating:</strong><%= rating_for @show, "original_score", enable_half: true, cancel_hint: 'Cancel this vote!' %></h6>
+          <div class="row">
+            <div class="small-4 columns">
+              <h6><strong>Average Rating:</strong><%= rating_for @show, "original_score", enable_half: true, cancel_hint: 'Cancel this vote!' %></h6>
+            </div>
+            <div class="small-5 columns">
+              <h6><strong>Share this:</strong>
+              <%= social_share_button_tag(@show.name, :popup => "true") %></h6>
+            </div>
+        </div>
         </div>
       </div>
     </div>
