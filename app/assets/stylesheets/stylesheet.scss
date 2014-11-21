@@ -155,9 +155,32 @@
   color: #2A4F54;
   }
 
-.line-left, .line-right {border-bottom: 2px solid #2a4f54;width: 22%;display: inline-block;margin-bottom: -50px;}
-.line-left {float: left;margin-top: 25px;margin-left: 15px;}
-.line-right {float: right;margin-top: 25px;margin-right: 15px;}
+.line-left, .line-right {
+  border-bottom: 2px solid #2a4f54;
+  width: 22%;
+  display: inline-block;
+  margin-bottom: -50px;
+}
+.line-left {
+  @media #{$large-only} {
+    float: left;
+    margin-top: 25px;
+    margin-left: 15px;
+  }
+  @media #{$medium-only} {
+    display: none;
+  }
+}
+.line-right {
+  @media #{$large-only} {
+    float: right;
+    margin-top: 25px;
+    margin-left: 15px;
+  }
+  @media #{$medium-only} {
+    display: none;
+  }
+}
 
 .forth_welcome{
   position: relative;
