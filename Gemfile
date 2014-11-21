@@ -58,9 +58,10 @@ group :production do
 end
 # upload multipart of a form via ajax
 gem 'remotipart', '~> 1.2'
-
 #markdown
 gem 'kramdown'
+#fivestar review
+gem 'ratyrate'
 
 #test
 group :development, :test do

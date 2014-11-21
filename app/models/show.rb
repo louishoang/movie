@@ -1,4 +1,6 @@
 class Show < ActiveRecord::Base
+  ratyrate_rateable 'original_score'
+
   paginates_per 24
   def self.search(query)
     where("name ilike ?", "%#{query}%")
