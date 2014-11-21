@@ -174,7 +174,6 @@
           </div>
         </div>
       </div>
-
     <% end %>
 
     <% @reviews.each do |review| %>
@@ -184,33 +183,34 @@
             <div>
               <h5><strong><%= review.title %></strong></h5>
             </div>
-          <div>
-            <h6><%= review.body %></h6>
-            <h6>
-              <% if current_user.email == review.user.email || current_user.role == "admin"%>
-                <%= link_to "Edit review", edit_show_review_path(@show, review), class: "tiny button active nice round"  %>
-                <%= link_to "Delete review", show_review_path(@show, review), class: "tiny button active nice round"  %>
-            </h6>
-            <%= link_to "Add comment", new_show_review_comment_path(@show, review, @comment), class: "tiny button active nice round"  %>
-              <% end %>
+          </div>
+          <h6><%= review.body %></h6>
+          <h6>
+            <% if current_user.email == review.user.email || current_user.role == "admin"%>
+              <%= link_to "Edit review", edit_show_review_path(@show, review), class: "tiny button active nice round"  %>
+              <%= link_to "Delete review", show_review_path(@show, review), class: "tiny button active nice round"  %>
+          </h6>
+              <%= link_to "Add comment", new_show_review_comment_path(@show, review, @comment), class: "tiny button active nice round"  %>
+            <% end %>
             <% if review.comments.size > 0 %>
-            <div class="panel">
-              <% review.comments.each do |comment| %>
-                <li>
-                  <%= comment.text %>
-                  <% if comment.owner?(current_user) %>
-                    <p>
-                      <%= link_to "Edit comment", edit_show_review_comment_path(@show, review, comment), class: "tiny button active nice round" %>
-                      <%= link_to "Delete comment", show_review_comment_path(@show, review, comment), class: "tiny button active nice round" %></h6>
-                    </p>
-                  <% end %>
-                </li>
-              <% end %>
-            </div>
+              <div class="panel">
+                <% review.comments.each do |comment| %>
+                  <li>
+                    <%= comment.text %>
+                    <% if comment.owner?(current_user) %>
+                      <p>
+                        <%= link_to "Edit comment", edit_show_review_comment_path(@show, review, comment), class: "tiny button active nice round" %>
+                        <%= link_to "Delete comment", show_review_comment_path(@show, review, comment), class: "tiny button active nice round" %></h6>
+                      </p>
+                    <% end %>
+                  </li>
+                <% end %>
+              </div>
             <% end %>
           </div>
         </div>
       </div>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
