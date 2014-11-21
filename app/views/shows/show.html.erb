@@ -36,7 +36,7 @@
         <%= image_tag(@show.poster, alt: "Poster", class: "poster")%><br>
       </div>
       <div class="small-9 columns">
-        <div class="panel">
+        <div class="panel round-corner">
           <h4><%= @show.name %></h4>
           <h6><%= @show.genre.name %></h6>
           <h6><%= @show.year %></h6>
@@ -157,7 +157,7 @@
     <% else %>
       <div class="row">
         <div class="small-12 columns">
-          <div class="panel">
+          <div class="panel round-corner space-top">
             <h5>Add Review</h5>
               <%= form_for [@show, @review] do |f| %>
                 <div>
