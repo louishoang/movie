@@ -1,0 +1,87 @@
+<div class="small-12 columns">
+  <div class="large-3 small-12 columns padding-top">
+    <div class="form-wrapper cf search-visible">
+      <%= form_tag("/shows", method: "get", class: "hidden-search") do %>
+        <%= search_field_tag "search", value = nil, options = {placeholder: "Search..."} %>
+        <%= submit_tag "Search",data: { disable_with: "..." }, class: "form_submit" %>
+      <% end %>
+    </div>
+    <p>
+      <h5 class="search-left">BROWSE:</h5>
+      <ul class="search-list">
+        <li>
+          <i class="fa fa-globe space-right"></i>
+          <a href="/shows?popular=true">Popular</a>
+        </li>
+        <li>
+          <i class="fa fa-star space-right"></i>
+          <a href="/shows?recommend=true">Recommended For You</a>
+        </li>
+        <li>
+          <i class="fa fa-tags space-right"></i>
+          <span id="genres">Genres<span>
+          <div class="genres-list hidden">
+            <ul>
+              <% @genres.each do |genre| %>
+                <li><a href="/shows?genre=<%= genre.id %>"><%= genre.name.capitalize %></a></li>
+              <% end %>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </p>
+    <% if user_signed_in? %>
+      <p>
+        <h5 class="search-left">SETTINGS:</h5>
+        <ul class="search-list">
+          <li>
+            <i class="fa fa-user space-right"></i>
+            <%= link_to "My Account", user_path(current_user) %>
+          </li>
+          <li>
+            <i class="fa fa-tty space-right">
+            </i>Customer Support
+          </li>
+        </ul>
+      </p>
+    <% end %>
+    <% if current_user && current_user.role == "admin"  %>
+      <p>
+        <h5 class="search-left">ADMIN SESSION:</h5>
+        <ul class="search-list">
+          <li>
+            <i class="fa fa-user space-right"></i>
+            <%= link_to "Admin Panel", admin_users_path %>
+          </li>
+        </ul>
+      </p>
+    <% end %>
+  </div>
+  <div class="large-9 small-12 columns right-panel padding-top">
+    <div class="row">
+      <div class="small-6 columns">
+        <strong><span class="popular">Affiliate on SlickHD</span></strong>
+      </div>
+      <div class="small-6 columns" style="text-align: right;">
+        <strong>
+        </strong>
+      </div>
+      <hr>
+    </div>
+    <div class="row" data-equalizer>
+      <% @affiliates.each do |affiliate| %>
+        <div class="large-2 small-6 left columns" data-equalizer-watch>
+          <div class="large-12 small-12 columns">
+            <%= link_to image_tag(affiliate.poster, alt: "Poster", class: "poster"),affiliate_path(affiliate) %>
+          </div>
+          <div class="large-12 small-12 columns poster_title">
+            <%= link_to affiliate.name, affiliate_path(affiliate), class: "title" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="paginate">
+      <%= paginate @affiliates %>
+    </div>
+  </div>
+</div>
