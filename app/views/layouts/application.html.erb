@@ -33,6 +33,9 @@
             <li class="nav-items">
               <%= link_to "Browse Movies", shows_path %>
             </li>
+            <li class="nav-items">
+              <%= link_to "Affiliates", affiliates_path %>
+            </li>
             <% if !user_signed_in? %>
               <li class="nav-items">
                 <%= link_to "Price", root_path(:anchor => "sixth_welcome") %>
@@ -91,7 +94,7 @@
         </ul>
       </div>
       <div class="small-12 large-5 columns end copyright-footer">
-        Copyright @ 2014 SlickHD.com
+        Copyright <i class="fa fa-copyright"></i> 2014 SlickHD.com
       </div>
     </div>
     <%= javascript_include_tag "application" %>

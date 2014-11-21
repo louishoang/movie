@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141121020654) do
+ActiveRecord::Schema.define(version: 20141121213500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "affiliates", force: true do |t|
+    t.string   "name",        null: false
+    t.text     "link",        null: false
+    t.text     "image",       null: false
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"

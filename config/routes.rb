@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "support" => 'infos#support', as: :support
 
   resources :users, only: [:show, :index]
+  resources :affiliates
   resources :infos
   resources :shows do
     resources :reviews do
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :affiliates
     resources :infos
     resources :users
     resources :shows

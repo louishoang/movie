@@ -1,0 +1,15 @@
+<div>
+  <div class="full-page space-top row collapse">
+    <%= link_to '<< Back', admin_affiliates_path %>
+    <div class="space-top">
+      <%= simple_form_for [:admin, @affiliate] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :name, required: true %>
+        <%= f.input :link, required: true %>
+        <%= f.input :image, required: true %>
+        <%= f.input :description %>
+        <%= f.button :submit, class: "button small round green" %>
+      <% end %>
+    </div>
+  </div>
+</div>

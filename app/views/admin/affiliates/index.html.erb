@@ -1,0 +1,59 @@
+<div class="small-12 columns full-page">
+  <div class="large-3 small-12 columns padding-top">
+    <%= render "admin/side_nav" %>
+  </div>
+  <div class="large-9 small-12 columns right-panel padding-top">
+    <div class="row">
+      <div class="small-6 columns">
+        <strong>
+          <span class="popular">Manage Affiliates</span>
+        </strong>
+      </div>
+      <div class="small-6 columns" style="text-align: right">
+        <%= link_to "Add new affiliate", new_admin_affiliate_path, class: "button tiny round green" %>
+      </div>
+      <hr>
+    </div>
+    <div class="row collapse">
+      <table id="transactions" class="display">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>link</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>
+              Edit
+            </th>
+            <th>
+              Delete
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @affiliates.each do |affiliate| %>
+          <tr>
+            <td><%= affiliate.name %></td>
+            <td><%= affiliate.link %></td>
+            <td><%= affiliate.description %></td>
+            <td><%= affiliate.created_at.to_s(:format_date) %></td>
+            <td>
+              <%= link_to edit_admin_affiliate_path(affiliate) do %>
+                <i class="fa fa-pencil-square-o"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to admin_affiliate_path(affiliate), method: :delete, data: { confirm: 'Proceed to delete this affiliate?' } do %>
+                <i class="fa fa-trash"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="paginate">
+      <%= paginate @affiliates %>
+    </div>
+  </div>
+</div>
