@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   get "verify/payment" => 'verify#index', as: :verify
+  get "support" => 'infos#support', as: :support
 
   resources :users, only: [:show, :index]
   resources :infos

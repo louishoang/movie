@@ -222,6 +222,7 @@
   background-color: rgba(255, 255, 255, 0.3);
   margin-top: 10%;
   margin-left: 10%;
+  text-align : center;
 }
 
 .circle-icons{
@@ -237,6 +238,12 @@
 
 .second-circle{
   margin-left: 5%;
+}
+
+.circle-text{
+  font-weight: bold;
+  color: #2A4F54;
+  font-size: 1em;
 }
 /*welcome end*/
 
@@ -1016,3 +1023,13 @@ table.dataTable td {
   .dataTables_wrapper .dataTables_filter {
     margin-top: 0.5em; } }
 
+// Support
+.support-panel{
+  background-color: #3A3A3A;
+  border-radius: 10px;
+  margin-left: 2%;
+  color: white;
+}
+.support-panel:hover{
+  background-color: #757575;
+}
