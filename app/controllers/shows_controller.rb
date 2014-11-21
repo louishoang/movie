@@ -22,8 +22,10 @@ class ShowsController < ApplicationController
     @show = Show.find(params[:id])
     @show.viewcount += 1
     @show.save
-    current_user.last_view = @show.genre_id
-    current_user.save
+    if current_user
+      current_user.last_view = @show.genre_id
+      current_user.save
+    end
     @reviews = @show.reviews.order(created_at: :desc).includes(:comments)
     @review = Review.new
     @comment = Comment.new

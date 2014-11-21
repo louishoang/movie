@@ -6,7 +6,7 @@
 
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
+    <%= stylesheet_link_tag    "application", "http://fonts.googleapis.com/css?family=Tangerine" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
@@ -43,7 +43,7 @@
                 <%= link_to "|| Sign Out ", destroy_user_session_path, :method => :delete %>
               </li>
               <li class="nav-items">
-                <%= link_to "My account ||", root_path %>
+                <%= link_to "My account ||", user_path(current_user) %>
               </li>
             <% else %>
               <li class="nav-items">
@@ -63,7 +63,7 @@
       </nav>
     </div>
     <div class="top-divider fixed"></div>
-    <% if notice %>
+    <% if notice || alert %>
       <div class="notice-flash">
         <p><%= notice %></p>
         <p><%= alert %></p>
@@ -72,12 +72,23 @@
     <%= yield %>
     <div class="six_welcome small-12 columns footer">
       <div class="small-5 small-offset-1 columns end">
-         Term of Use &nbsp;&nbsp;&nbsp;
-          Privacy Policy&nbsp;&nbsp;&nbsp;
-         Support
+        <ul>
+          <li>
+            <%= link_to "About Us ||", info_path(2), {class: "link_footer"} %>
+          </li>
+          <li>
+            <%= link_to "Term of Use ||", info_path(4), {class: "link_footer"} %>
+          </li>
+          <li>
+            <%= link_to "Privacy Policy ||", info_path(5), {class: "link_footer"} %>
+          </li>
+          <li>
+            <%= link_to "How it works", info_path(3), {class: "link_footer"} %>
+          </li>
+        </ul>
       </div>
       <div class="small-5 columns end" style="text-align: right">
-        Copyright @ 2014 MyVideoSite.com
+        Copyright @ 2014 SlickHD.com
       </div>
     </div>
     <%= javascript_include_tag "application" %>

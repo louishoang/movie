@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   get "verify/payment" => 'verify#index', as: :verify
+  get "support" => 'infos#support', as: :support
 
   resources :users, only: [:show, :index]
+  resources :infos
   resources :shows do
     resources :reviews do
       resources :comments
@@ -12,10 +14,13 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    resources :infos
     resources :users
     resources :shows
     resources :transactions
   end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

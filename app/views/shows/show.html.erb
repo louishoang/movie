@@ -1,24 +1,34 @@
 <div class="row space-top">
+  <div class="movie-page-title">
+    <h3><%= @show.name.upcase %></h3>
+  </div>
   <div class="small-12 columns video-player">
-    <video controls="controls" class="video">
-      <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div class="leadgen">
-      <div class="small-10 small-offset-1 columns">
-        <div class="small-12 columns lead-image">
-          <img src="https://s3.amazonaws.com/movie-site-anton/movie-reels-and-popcorn.png">
-        </div>
-        <div class="small-12 columns lead-text">
-        Our library can be streamed from certain countries only.<br>
-        Please, see if you are eligible to stream or download our content by creating an account.<br>
-        You must create a FREE account in order to stream or download this movie.
-        </div>
-        <div>
-          <%= link_to "CREATE A FREE ACCOUNT", new_user_registration_path, class: "button create-free-account" %>
+    <% if !user_signed_in? %>
+      <video controls="controls" class="video">
+        <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="leadgen">
+        <div class="small-10 small-offset-1 columns">
+          <div class="small-12 columns lead-image">
+            <img src="https://s3.amazonaws.com/movie-site-anton/movie-reels-and-popcorn.png">
+          </div>
+          <div class="small-12 columns lead-text">
+          Our library can be streamed from certain countries only.<br>
+          Please, see if you are eligible to stream or download our content by creating an account.<br>
+          You must create a FREE account in order to stream or download this movie.
+          </div>
+          <div>
+            <%= link_to "CREATE A FREE ACCOUNT", new_user_registration_path, class: "button create-free-account" %>
+          </div>
         </div>
       </div>
-    </div>
+    <% else %>
+      <video controls="controls" class="real-video">
+        <source src="<%= @show.video_uid %>" />
+        Your browser does not support the video tag.
+      </video>
+    <% end %>
   </div>
   <div class="small-12 columns">
     <div class="row">
@@ -34,27 +44,138 @@
         </div>
       </div>
     </div>
-
-    <div class="row">
-      <div class="small-12 columns">
-        <div class="panel">
-          <h5>Add Review</h5>
-            <%= form_for [@show, @review] do |f| %>
-              <div>
-                <%= f.label :title %>
-                <%= f.text_field :title %>
+    <% if !user_signed_in? %>
+      <div class="small-12 columns panel space-top">
+        <div class="comments">
+          <ul class="comments-list">
+            <li class="panel">
+              <div class="author">
+                <i class="fa fa-user"></i>miracoolix
               </div>
-              <div>
-                <%= f.label :body %>
-                <%= f.text_area :body %>
+              <div class="date">
+                <i class="fa fa-clock-o"></i>13 days ago
               </div>
-              <div>
-                <%= f.submit "Add review", class: "tiny button active nice round"  %>
+              <div class="text">Thank you very much - i was looking for this for a veeery long time!
               </div>
-            <% end %>
+            </li>
+            <li class="panel">
+              <div class="author">
+                <i class="fa fa-user"></i>MjrTom
+              </div>
+              <div class="date">
+                <i class="fa fa-clock-o"></i>14 days ago
+              </div>
+              <div class="text">Glad to have found you &lt;3
+              </div>
+            </li>
+            <li class="panel">
+              <div class="author">
+                <i class="fa fa-user"></i>Movie Hunter
+              </div>
+              <div class="date"><i class="fa fa-clock-o"></i>14 days ago
+              </div>
+              <div class="text">It is great for the first two thirds but then things get a little lengthy. But it has a great ending!
+              </div>
+              <ul>
+                <li class="panel">
+                  <div class="author">
+                    <i class="fa fa-user"></i>destiny caldwell
+                  </div>
+                  <div class="date">
+                    <i class="fa fa-clock-o"></i>14 days ago
+                  </div>
+                  <div class="text">Well the ending made me cry!!!!
+                  </div>
+                </li>
+                <li class="panel">
+                  <div class="author">
+                    <i class="fa fa-user"></i>Anne Marie D
+                  </div>
+                  <div class="date">
+                    <i class="fa fa-clock-o"></i>14 days ago
+                  </div>
+                  <div class="text">Same here :(
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="panel">
+              <div class="author">
+                <i class="fa fa-user"></i>majoryX
+              </div>
+              <div class="date">15 days ago
+              </div>
+              <div class="text">Wow!!!
+              </div>
+            </li>
+            <li class="panel">
+              <div class="author">
+                <i class="fa fa-user"></i>veereenaa
+              </div>
+              <div class="date">
+                <i class="fa fa-clock-o"></i>15 days ago
+              </div>
+              <div class="text">oh - even works on my telly
+              </div>
+            </li>
+            <li class="panel">
+              <div class="author">
+                <i class="fa fa-user"></i>DontAskMeThat
+              </div>
+              <div class="date">
+                <i class="fa fa-clock-o"></i>16 days ago
+              </div>
+              <div class="text">pleaazze also offer airplay!
+              </div>
+              <ul>
+                <li class="panel">
+                  <div class="author">
+                    <i class="fa fa-user"></i>BarBazz</div>
+                    <div class="date">
+                      <i class="fa fa-clock-o"></i>16 days ago
+                    </div>
+                    <div class="text">Yeah! SlickHD rules!
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="panel">
+                <div class="author">
+                  <i class="fa fa-user"></i>CindyCoops
+                </div>
+                <div class="date">
+                  <i class="fa fa-clock-o"></i>16 days ago
+                </div>
+                <div class="text">this was really the best movie i've ever seen!
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    <% else %>
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="panel">
+            <h5>Add Review</h5>
+              <%= form_for [@show, @review] do |f| %>
+                <div>
+                  <%= f.label :title %>
+                  <%= f.text_field :title %>
+                </div>
+                <div>
+                  <%= f.label :body %>
+                  <%= f.text_area :body %>
+                </div>
+                <div>
+                  <%= f.submit "Add review", class: "tiny button active nice round"  %>
+                </div>
+              <% end %>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
 
     <% @reviews.each do |review| %>
       <div class="row">

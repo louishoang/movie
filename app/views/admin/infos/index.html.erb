@@ -1,0 +1,33 @@
+<div class="space-top row collapse full-page panel">
+  <%= link_to "<< Back To Admin Panel", admin_users_path %>
+  <h4>Manage static web page content</h4>
+  <table>
+    <tr>
+      <th>Page Name</th>
+      <th>Page Link</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <% @infos.each do |page| %>
+      <tr>
+        <td><%= page.name %></td>
+        <td><%= page.permalink %></td>
+        <td>
+          <%= link_to edit_admin_info_path(page) do %>
+            <i class="fa fa-pencil-square-o"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to admin_info_path(page), method: :delete, data: { confirm: 'Proceed to delete this page?' } do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
+        </td>
+      <tr>
+    <% end %>
+  </table>
+  <%= link_to "Add new static page", new_admin_info_path %>
+  <div class="space-top">
+    <span class="note">Note**: To learn how to use markdown and create a HTML page, please visit http://kramdown.gettalong.org/syntax.html </span>
+  </div>
+
+</div>

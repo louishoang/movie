@@ -15,19 +15,23 @@
     </li>
   </ul>
 </p>
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.role == "admin" %>
   <p>
     <h5 class="search-left">CONTENT MANAGEMENT:</h5>
+    <%= link_to "Manage static page", admin_infos_path %>
     <ul class="search-list">
       <li>
         <i class="fa fa-newspaper-o space-right"></i>
-        <%= link_to "About Us", root_path %>
+        <%= link_to "About Us", edit_admin_info_path(2) %>
       </li>
       <li><i class="fa fa-file-text-o space-right"></i>
-        <%= link_to "Term of Use", root_path %>
+        <%= link_to "Term of Use", edit_admin_info_path(4) %>
       </li>
       <li><i class="fa fa-file-powerpoint-o space-right"></i>
-        <%= link_to "Privacy Policy", root_path %>
+        <%= link_to "Privacy Policy", edit_admin_info_path(5) %>
+      </li>
+      <li><i class="fa fa-file-powerpoint-o space-right"></i>
+        <%= link_to "How it works", edit_admin_info_path(3) %>
       </li>
     </ul>
   </p>

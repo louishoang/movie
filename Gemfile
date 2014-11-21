@@ -59,6 +59,9 @@ end
 # upload multipart of a form via ajax
 gem 'remotipart', '~> 1.2'
 
+#markdown
+gem 'kramdown'
+
 #test
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console

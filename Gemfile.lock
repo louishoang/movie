@@ -144,6 +144,7 @@ GEM
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kramdown (1.4.2)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -271,6 +272,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails (~> 4.0.0.beta2)
   kaminari
+  kramdown
   owlcarousel-rails
   pg
   pry-rails
