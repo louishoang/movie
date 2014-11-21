@@ -9,29 +9,13 @@
           <span class="popular">Manage Movies</span>
         </strong>
       </div>
+      <div class="small-6 columns" style="text-align: right">
+         <%= link_to "Add new movie", new_admin_show_path, class: "button tiny round green" %>
+      </div>
       <hr>
     </div>
-    <div class="row postfix-round">
-      <%= simple_form_for :search,
-                          url: admin_users_path,
-                          :method => :get do |f| %>
-        <div class="small-8 columns">
-          <%= f.search_field :search,
-                           placeholder: 'Example: user@domain.com'
-                          %>
-        </div>
-        <div class="small-2 columns">
-          <%= f.submit "Search", class: "button small round green postfix" %>
-        </div>
-        <div class="small-2 columns">
-        </div>
-      <% end %>
-    </div>
     <div class="row collapse">
-      <%= link_to "Add new movie", new_admin_show_path, class: "button small round green" %>
-    </div>
-    <div class="row collapse">
-      <table>
+      <table id="transactions" class="display">
         <thead>
           <tr>
             <th>Name</th>
@@ -71,9 +55,6 @@
           <% end %>
         </tbody>
       </table>
-    </div>
-    <div class="paginate">
-      <%= paginate @shows %>
     </div>
   </div>
 </div>

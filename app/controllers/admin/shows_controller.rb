@@ -4,7 +4,7 @@ module Admin
     before_action :set_show, only: [:destroy, :edit, :update]
 
     def index
-      @shows = Show.order(:created_at).page params[:page]
+      @shows = Show.all.page params[:page]
     end
 
     def new
