@@ -15,8 +15,13 @@
       <hr>
     </div>
     <div class="row collapse">
-      <h5><strong>Total sale: </strong><%=  "%05.2f" % @total %> USD</h5>
-      <h5><strong>Average receipt: </strong><%= "%05.2f" % @average %> USD</h5>
+      <%if @total && @average%>
+        <h5><strong>Total sale: </strong><%=  "%05.2f" % @total %> USD</h5>
+        <h5><strong>Average receipt: </strong><%= "%05.2f" % @average %> USD</h5>
+      <% else %>
+        <h5><strong>Total sale: </strong>0.00 USD</h5>
+        <h5><strong>Average receipt: </strong>0.00 USD</h5>
+      <% end %>
       <hr>
     </div>
     <div class="row collapse">
