@@ -72,10 +72,10 @@
       <% @affiliates.each do |affiliate| %>
         <div class="large-2 small-6 left columns" data-equalizer-watch>
           <div class="large-12 small-12 columns">
-            <%= link_to image_tag(affiliate.poster, alt: "Poster", class: "poster"),affiliate_path(affiliate) %>
+            <%= link_to image_tag(affiliate.image, alt: "Poster", class: "poster"), url_with_protocol(affiliate.link) %>
           </div>
           <div class="large-12 small-12 columns poster_title">
-            <%= link_to affiliate.name, affiliate_path(affiliate), class: "title" %>
+            <%= link_to affiliate.name, url_with_protocol(affiliate.link), class: "title" %>
           </div>
         </div>
       <% end %>
