@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   get "verify/payment" => 'verify#index', as: :verify
-  get "support" => 'infos#support', as: :support
 
   resources :users, only: [:show, :index]
   resources :affiliates
@@ -23,6 +22,9 @@ Rails.application.routes.draw do
     resources :transactions
   end
 
+  #Contact us routes
+  match '/contacts', to: 'contacts#new', via: 'get'
+  resources :contacts
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
