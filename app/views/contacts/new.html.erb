@@ -1,0 +1,37 @@
+<div>
+  <div class="space-top row collapse">
+    <div class="small-12 columns">
+      <div class="small-4 small-offset-2 columns support-panel-one">
+        <div><span>Call Us</span><br>
+        001-456-789-1000
+        </div>
+      </div>
+      <div class="small-4 columns support-panel-two">
+        <div>
+        <span>Email Us</span><br>
+        <span>
+          anton@gmail.com
+        </span>
+        </div>
+      </div>
+      <div class="small-4 columns">
+      </div>
+    </div>
+    <div class="small-12 columns space-top">
+    <h3>Send us an email</h3>
+      <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+        <%= f.input :name, :required => true %>
+        <%= f.input :email, :required => true %>
+        <%= f.label :message, :focus => true %>
+        <%= f.text_area :message, :required => true, :cols => "30", :rows => "10" %>
+        <div class= "hidden">
+          <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+        </div>
+        <div class="small-offset-1 columns">
+          </br>
+          <%= f.button :submit, 'Send message', :class=> "button small round green" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

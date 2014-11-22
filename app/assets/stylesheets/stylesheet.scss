@@ -54,7 +54,7 @@
 }
 // FLASH
 .notice-flash{
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #A0D3E8;
   text-align: center;
   margin-top: 5px;
 }
@@ -1187,12 +1187,27 @@ table.dataTable td {
   }
 }
 // Support
-.support-panel{
-  background-color: #3A3A3A;
+.support-panel-one{
+  background-color: #085A78;
   border-radius: 10px;
   margin-left: 2%;
   color: white;
+  opacity: 0.9;
+  text-align: center;
 }
-.support-panel:hover{
-  background-color: #757575;
+
+.support-panel-two{
+  background-color: #FE5D05;
+  border-radius: 10px;
+  margin-left: 2%;
+  color: white;
+  opacity: 0.9;
+  text-align: center;
+}
+.support-panel-one:hover, .support-panel-two:hover{
+  opacity: 1;
+}
+
+.support-panel-one div, .support-panel-two div{
+  padding: 15px 15px 15px 15px;
 }

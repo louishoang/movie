@@ -65,9 +65,12 @@ gem 'ratyrate'
 #social sharing
 gem 'social-share-button'
 
+#server, I used it when setting up and test mailer of devise
 group :development, :test do
-gem 'foreman'
+  gem 'foreman'
 end
+# Contact us
+gem 'mail_form'
 
 #test
 group :development, :test do

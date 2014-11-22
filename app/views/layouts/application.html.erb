@@ -71,8 +71,8 @@
     <div class="top-divider fixed"></div>
     <% if notice || alert %>
       <div class="notice-flash">
-        <p><%= notice %></p>
-        <p><%= alert %></p>
+        <%= notice %>
+        <%= alert %>
       </div>
     <% end %>
     <%= yield %>
